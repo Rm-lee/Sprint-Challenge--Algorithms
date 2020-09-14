@@ -14,6 +14,7 @@ class SortingRobot:
         Returns True if the robot can move right or False if it's
         at the end of the list.
         """
+
         return self._position < len(self._list) - 1
 
     def can_move_left(self):
@@ -96,8 +97,13 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        for i in self._list:
+              if self._list.index(i) == len(self._list) -1:
+                  return
+              elif i > self._list[self._list.index(i) + 1]:
+                  self._list.insert(0,self._list[self._list.index(i) + 1])
+                  self._list.pop(self._list[self._list.index(i) + 1])
+                  
 
 
 if __name__ == "__main__":
